@@ -50,6 +50,7 @@ public class Slingshot : MonoBehaviour {
 		// Make our projectile kinematic (for now)
 
 		projectile.GetComponent<Rigidbody>().isKinematic = true;
+
 	}
 
 	void Update() {
@@ -87,6 +88,10 @@ public class Slingshot : MonoBehaviour {
 
 			// set the projectiles velocity to the negative mouse delta vector
 			projectile.GetComponent<Rigidbody>().velocity = -mouseDelta * velocityMultiplier;
+
+
+			// Set the cameras poi to this newly created projectile
+			FollowCam.S.poi = projectile;
 		}
 	}
 
